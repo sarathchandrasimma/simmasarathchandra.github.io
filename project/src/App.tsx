@@ -10,9 +10,9 @@ import {
   Instagram, 
   Code, 
   Database, 
-  BarChart, 
-  // Brain, 
-  Dumbbell
+  BarChart,
+  Brain,
+  Dumbbell,
 } from 'lucide-react';
 import profileImage from "./profile.jpg"
 
@@ -132,7 +132,7 @@ function App() {
           </h2>
           <div className="max-w-3xl mx-auto text-lg leading-relaxed">
             <p className="mb-6">
-              I'm a passionate, self-learning and highly motivated data science aspirant with a 9.4 CGPA. I blend strong academic foundations with creative pursuits — building YouTube channels, exploring AI tools, and staying consistent with my fitness goals.
+              I blend strong academic foundations with creative pursuits — building YouTube channels, exploring AI tools, and staying consistent with my fitness goals.
             </p>
             <p>
               I believe in fast learning, adaptability, and always pushing the bar higher. My goal is to leverage data science and AI to create innovative solutions that make a positive impact.
@@ -173,8 +173,8 @@ function App() {
               <h3 className="text-xl font-semibold">Matplotlib</h3>
             </div>
             <div className={`p-6 rounded-lg ${darkMode ? 'bg-gray-700 hover:bg-gray-600' : 'bg-white hover:shadow-lg'} transition-all flex flex-col items-center`}>
-              <Database size={40} className={`mb-4 ${darkMode ? 'text-blue-400' : 'text-blue-500'}`} />
-              <h3 className="text-xl font-semibold">EDA</h3>
+              <Brain size={40} className={`mb-4 ${darkMode ? 'text-blue-400' : 'text-blue-500'}`} />
+              <h3 className="text-xl font-semibold">MERN - on going</h3>
             </div>
             <div className={`p-6 rounded-lg ${darkMode ? 'bg-gray-700 hover:bg-gray-600' : 'bg-white hover:shadow-lg'} transition-all flex flex-col items-center`}>
               <Github size={40} className={`mb-4 ${darkMode ? 'text-blue-400' : 'text-blue-500'}`} />
@@ -192,7 +192,7 @@ function App() {
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className={`p-6 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-gray-50'} shadow-md hover:shadow-xl transition-all`}>
-              <h3 className="text-xl font-bold mb-3">NPTEL Data Engineering</h3>
+              <a href=""></a><h3 className="text-xl font-bold mb-3">NPTEL Data Engineering</h3>
               <p className={`inline-block px-3 py-1 rounded-full text-sm ${darkMode ? 'bg-blue-900 text-blue-200' : 'bg-blue-100 text-blue-800'}`}>Elite</p>
               <p className="mt-4">Comprehensive data engineering course covering data pipelines, ETL processes, and database management.</p>
             </div>
