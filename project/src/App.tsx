@@ -15,6 +15,8 @@ import {
   Dumbbell,
 } from 'lucide-react';
 import profileImage from "./profile.jpg"
+import Resume from "./sarathchandra_resume.pdf"
+import fitness from "./fitness.jpg"
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -328,7 +330,7 @@ function App() {
             <div className="md:w-1/3">
               <div className="rounded-lg overflow-hidden shadow-lg">
                 <img 
-                  src="https://images.pexels.com/photos/1229356/pexels-photo-1229356.jpeg" 
+                  src={fitness} 
                   alt="Fitness" 
                   className="w-full h-64 object-cover"
                 />
@@ -395,7 +397,7 @@ function App() {
                 </div>
                 <div className="mt-8 text-center">
                   <a 
-                    href="/resume.pdf" 
+                    href={Resume}
                     download 
                     className={`inline-flex items-center px-6 py-3 rounded-lg ${darkMode ? 'bg-blue-600 hover:bg-blue-700' : 'bg-blue-500 hover:bg-blue-600'} text-white font-medium transition-colors`}
                   >
