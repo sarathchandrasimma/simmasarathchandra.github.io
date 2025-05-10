@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { 
   Github, 
   Linkedin, 
@@ -11,9 +11,10 @@ import {
   Code, 
   Database, 
   BarChart, 
-  Brain, 
+  // Brain, 
   Dumbbell
 } from 'lucide-react';
+import profileImage from "./profile.jpg"
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -27,27 +28,30 @@ function App() {
     "Fitness Enthusiast",
     "AI Enthusiast"
   ];
-
   useEffect(() => {
-    const typingEffect = () => {
-      const currentText = texts[currentTextIndex];
-      const shouldDelete = isDeleting ? displayText.length - 1 : displayText.length + 1;
-      setDisplayText(currentText.substring(0, shouldDelete));
+  const currentText = texts[currentTextIndex];
 
-      if (!isDeleting && displayText === currentText) {
-        setTimeout(() => setIsDeleting(true), 1500);
-      } else if (isDeleting && displayText === '') {
-        setIsDeleting(false);
-        setCurrentTextIndex((currentTextIndex + 1) % texts.length);
-      }
+  let timeout: any;
 
-      const typingSpeed = isDeleting ? 80 : 120;
-      setTimeout(typingEffect, typingSpeed);
-    };
+  if (!isDeleting && displayText.length < currentText.length) {
+    timeout = setTimeout(() => {
+      setDisplayText(currentText.substring(0, displayText.length + 1));
+    }, 150);
+  } else if (isDeleting && displayText.length > 0) {
+    timeout = setTimeout(() => {
+      setDisplayText(currentText.substring(0, displayText.length - 1));
+    }, 80);
+  } else if (!isDeleting && displayText === currentText) {
+    timeout = setTimeout(() => {
+      setIsDeleting(true);
+    }, 1500);
+  } else if (isDeleting && displayText === '') {
+    setIsDeleting(false);
+    setCurrentTextIndex((currentTextIndex + 1) % texts.length);
+  }
 
-    const timer = setTimeout(typingEffect, 100);
-    return () => clearTimeout(timer);
-  }, [currentTextIndex, displayText, isDeleting, texts]);
+  return () => clearTimeout(timeout);
+}, [displayText, isDeleting, texts, currentTextIndex]);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
@@ -82,7 +86,7 @@ function App() {
         <div className="container mx-auto px-6 flex flex-col items-center">
           <div className="w-48 h-48 rounded-full overflow-hidden mb-8 border-4 border-blue-500 shadow-xl">
             <img 
-              src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg" 
+              src={profileImage}
               alt="Profile" 
               className="w-full h-full object-cover"
             />
