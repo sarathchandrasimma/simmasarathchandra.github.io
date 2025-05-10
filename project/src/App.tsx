@@ -187,7 +187,7 @@ function App() {
       </section>
 
       {/* Certifications Section */}
-      <section id="certifications" className={`py-20 ${darkMode ? 'bg-gray-900' : 'bg-white'}`}>
+      {/* <section id="certifications" className={`py-20 ${darkMode ? 'bg-gray-900' : 'bg-white'}`}>
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold mb-12 text-center">
             <span className={`border-b-4 ${darkMode ? 'border-blue-400' : 'border-blue-500'} pb-2`}>Certifications</span>
@@ -209,7 +209,52 @@ function App() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+      <section id="certifications" className={`py-20 ${darkMode ? 'bg-gray-900' : 'bg-white'}`}>
+  <div className="container mx-auto px-6">
+    <h2 className="text-3xl font-bold mb-12 text-center">
+      <span className={`border-b-4 ${darkMode ? 'border-blue-400' : 'border-blue-500'} pb-2`}>
+        Certifications
+      </span>
+    </h2>
+    <div className="grid md:grid-cols-3 gap-8">
+      {[
+        {
+          title: 'NPTEL Data Engineering',
+          badge: 'Elite',
+          badgeStyle: darkMode ? 'bg-blue-900 text-blue-200' : 'bg-blue-100 text-blue-800',
+          description: 'Comprehensive data engineering course covering data pipelines, ETL processes, and database management.',
+        },
+        {
+          title: 'Infosys Springboard Internship',
+          description: 'Hands-on experience with real-world data science projects and enterprise-level applications.',
+        },
+        {
+          title: 'Infosys Data Visualization Path',
+          badge: '13 certifications',
+          badgeStyle: darkMode ? 'bg-green-900 text-green-200' : 'bg-green-100 text-green-800',
+          description: 'Comprehensive training in data visualization techniques, tools, and best practices.',
+        },
+      ].map((cert, index) => (
+        <div
+          key={index}
+          className={`p-6 rounded-lg transition-all duration-300 transform hover:scale-105 
+            ${darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-50 hover:bg-gray-100'} 
+            shadow-md hover:shadow-2xl`}
+        >
+          <h3 className="text-xl font-bold mb-3">{cert.title}</h3>
+          {cert.badge && (
+            <p className={`inline-block px-3 py-1 rounded-full text-sm mb-2 ${cert.badgeStyle}`}>
+              {cert.badge}
+            </p>
+          )}
+          <p className="mt-4">{cert.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* Projects Section */}
       <section id="projects" className={`py-20 ${darkMode ? 'bg-gray-800' : 'bg-gray-50'}`}>
