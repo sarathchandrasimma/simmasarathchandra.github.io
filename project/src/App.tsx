@@ -17,6 +17,9 @@ import {
 import profileImage from "./profile.jpg"
 import Resume from "./sarathchandra_resume.pdf"
 import fitness from "./fitness.jpg"
+import cisco from './cisco.png'
+import infosys from "./infosys.jpeg"
+import nptel from "./nptel.jpeg"
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -210,7 +213,7 @@ function App() {
           </div>
         </div>
       </section> */}
-      <section id="certifications" className={`py-20 ${darkMode ? 'bg-gray-900' : 'bg-white'}`}>
+      {/*<section id="certifications" className={`py-20 ${darkMode ? 'bg-gray-900' : 'bg-white'}`}>
   <div className="container mx-auto px-6">
     <h2 className="text-3xl font-bold mb-12 text-center">
       <span className={`border-b-4 ${darkMode ? 'border-blue-400' : 'border-blue-500'} pb-2`}>
@@ -254,6 +257,63 @@ function App() {
     </div>
   </div>
 </section>
+*/}
+<section id="certifications" className={`py-20 ${darkMode ? 'bg-gray-900' : 'bg-white'}`}>
+  <div className="container mx-auto px-6">
+    <h2 className="text-3xl font-bold mb-12 text-center">
+      <span className={`border-b-4 ${darkMode ? 'border-blue-400' : 'border-blue-500'} pb-2`}>
+        Certifications
+      </span>
+    </h2>
+    <div className="grid md:grid-cols-3 gap-8">
+
+      {/* Certificate 1 */}
+      <div
+        className={`p-6 rounded-lg transition-all duration-300 transform hover:scale-105 
+          ${darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-50 hover:bg-gray-100'} 
+          shadow-md hover:shadow-2xl`}
+      >
+        <img src={nptel} alt="NPTEL Data Engineering Certificate" className="w-full h-auto rounded mb-4 shadow-sm" />
+        <p className={`inline-block px-3 py-1 rounded-full text-sm mb-2 ${darkMode ? 'bg-blue-900 text-blue-200' : 'bg-blue-100 text-blue-800'}`}>
+          Elite
+        </p>
+        <p className={`${darkMode ? 'text-gray-300' : 'text-gray-700'} mt-4`}>
+          Comprehensive data engineering course covering data pipelines, ETL processes, and database management.
+        </p>
+      </div>
+
+      {/* Certificate 2 */}
+      <div
+        className={`p-6 rounded-lg transition-all duration-300 transform hover:scale-105 
+          ${darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-50 hover:bg-gray-100'} 
+          shadow-md hover:shadow-2xl`}
+      >
+        <img src={infosys} alt="Infosys Springboard Internship Certificate" className="w-full h-auto rounded mb-4 shadow-sm" />
+        <p className={`${darkMode ? 'text-gray-300' : 'text-gray-700'} mt-4`}>
+          Hands-on experience with real-world data science projects and enterprise-level applications.
+        </p>
+      </div>
+
+      {/* Certificate 3 */}
+      <div
+        className={`p-6 rounded-lg transition-all duration-300 transform hover:scale-105 
+          ${darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-50 hover:bg-gray-100'} 
+          shadow-md hover:shadow-2xl`}
+      >
+        <img src={cisco} alt="Cisco Python Essential Certificate" className="w-full h-auto rounded mb-4 shadow-sm" />
+        <p className={`inline-block px-3 py-1 rounded-full text-sm mb-2 ${darkMode ? 'bg-green-900 text-green-200' : 'bg-green-100 text-green-800'}`}>
+          Cisco Essential
+        </p>
+        <p className={`${darkMode ? 'text-gray-300' : 'text-gray-700'} mt-4`}>
+          Comprehensive training in Cisco Python Essential - 1.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
 
 
       {/* Projects Section */}
