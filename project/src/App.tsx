@@ -425,7 +425,7 @@ function App() {
         </div>
       </section>
 
-      {/* Fitness Section */}
+      {/* Fitness Section
       <section id="fitness" className={`py-20 ${darkMode ? 'bg-gray-800' : 'bg-gray-50'}`}>
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold mb-12 text-center">
@@ -452,7 +452,7 @@ function App() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Contact Section */}
       <section id="contact" className={`py-20 ${darkMode ? 'bg-gray-900' : 'bg-white'}`}>
