@@ -20,6 +20,8 @@ import fitness from "./fitness.jpg"
 import cisco from './cisco.png'
 import infosys from "./infosys.jpeg"
 import nptel from "./nptel.jpeg"
+import shopnav from "./shopnav.png"
+import BorrowerInfoExhange from "./BorrowerInfoExhange.png"
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -316,7 +318,7 @@ function App() {
 
 
 
-      {/* Projects Section */}
+      {/* Projects Section
       <section id="projects" className={`py-20 ${darkMode ? 'bg-gray-800' : 'bg-gray-50'}`}>
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold mb-12 text-center">
@@ -340,7 +342,159 @@ function App() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+      {/* Projects Section */}
+{/* <section id="projects" className={`py-20 ${darkMode ? 'bg-gray-900' : 'bg-gray-100'}`}>
+  <div className="container mx-auto px-6">
+    <h2 className="text-3xl font-bold mb-12 text-center">
+      <span className={`border-b-4 ${darkMode ? 'border-blue-400' : 'border-blue-500'} pb-2`}>
+        Projects
+      </span>
+    </h2>
+    <div className="overflow-x-auto">
+      <div className="flex gap-6 w-max px-2">
+        {/* Project Card */}
+        {/* {[
+          {
+            name: "ShopNav (AI Product Scraper)",
+            description: "An intelligent web scraper that navigates e-commerce sites to find and compare products based on user specifications.",
+            link: "https://shopnav-price-pilot.vercel.app/",
+            github: "https://github.com/sarathchandrasimma/shopnav-price-pilot.git",
+          },
+          {
+            name: "Borrower Info Exchange Dashboard",
+            description: "A comprehensive dashboard for tracking and managing borrower information with data visualization and analytics capabilities.",
+            link: "https://bank-borrower-nexus-ai.vercel.app/",
+            github: "https://github.com/sarathchandrasimma/bank-borrower-nexus-ai.git",
+          },
+        ].map((project, idx) => (
+          <div
+            key={idx}
+            className={`w-80 min-w-[20rem] cursor-pointer transition-all transform hover:scale-105 rounded-2xl shadow-lg ${darkMode ? 'bg-gray-800 text-white' : 'bg-white text-black'} p-6`}
+            onClick={() => window.open(project.link, "_blank")}
+          >
+            <h3 className="text-xl font-semibold mb-2">{project.name}</h3>
+            <p className="text-sm mb-4">{project.description}</p>
+            <div className="flex items-center space-x-4 mt-auto">
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-1 text-sm hover:underline"
+              >
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    fillRule="evenodd"
+                    d="M12 0C5.372 0 0 5.373 0 12a12.007 12.007 0 008.208 11.385c.6.111.82-.261.82-.58 0-.287-.01-1.047-.016-2.056-3.338.724-4.042-1.61-4.042-1.61-.546-1.386-1.334-1.755-1.334-1.755-1.09-.745.083-.73.083-.73 1.205.085 1.839 1.238 1.839 1.238 1.07 1.834 2.807 1.304 3.49.997.109-.775.419-1.305.76-1.605-2.664-.305-5.466-1.333-5.466-5.932 0-1.31.467-2.381 1.235-3.22-.124-.304-.535-1.53.117-3.188 0 0 1.007-.322 3.3 1.23a11.47 11.47 0 013.006-.404c1.02.005 2.047.137 3.006.404 2.292-1.552 3.297-1.23 3.297-1.23.653 1.658.242 2.884.118 3.188.77.839 1.233 1.91 1.233 3.22 0 4.61-2.805 5.624-5.476 5.922.43.371.812 1.104.812 2.222 0 1.606-.015 2.901-.015 3.293 0 .32.217.696.825.578A12.007 12.007 0 0024 12c0-6.627-5.373-12-12-12z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                <span>GitHub (Private)</span>
+              </a>
+              <a href="mailto:sarathchandrasimma.04@gmail.com" className="hover:underline flex items-center space-x-1">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 13.065L1.994 6.384A2 2 0 014 4h16a2 2 0 012.006 2.384L12 13.065zm0 2.059L4 7.104V18h16V7.104l-8 8.02z" />
+                </svg>
+                <span>Email</span>
+              </a>
+              <a href="https://wa.me/919100151006" target="_blank" rel="noopener noreferrer" className="hover:underline flex items-center space-x-1">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.52 3.48A11.93 11.93 0 0012 0C5.37 0 0 5.373 0 12a11.936 11.936 0 001.69 6.08L0 24l6.18-1.62A11.943 11.943 0 0012 24c6.63 0 12-5.373 12-12a11.94 11.94 0 00-3.48-8.52zM12 22c-1.7 0-3.32-.39-4.75-1.08l-.34-.17-3.67.96.98-3.57-.22-.36C3.43 16.11 3 14.09 3 12 3 6.48 7.48 2 12 2s9 4.48 9 10-4.48 10-9 10zm5.4-7.6c-.29-.14-1.7-.84-1.96-.94s-.45-.14-.64.14c-.19.29-.74.94-.9 1.13-.17.2-.33.21-.61.07s-1.19-.44-2.27-1.4c-.84-.75-1.4-1.67-1.56-1.95s-.02-.43.12-.57c.13-.13.29-.34.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5s-.64-1.55-.88-2.12c-.23-.55-.47-.47-.64-.48h-.55c-.19 0-.5.07-.76.36s-1 1-.98 2.44.96 2.82 1.1 3.02c.14.2 1.9 2.9 4.6 4.06.64.28 1.14.45 1.53.57.64.2 1.22.17 1.68.1.51-.08 1.7-.7 1.94-1.38.24-.68.24-1.27.17-1.38-.08-.11-.27-.17-.56-.3z"/>
+                </svg>
+                <span>WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section> */} 
+
+{/* Projects Section */}
+<section id="projects" className={`py-20 ${darkMode ? 'bg-gray-900' : 'bg-gray-100'}`}>
+  <div className="container mx-auto px-6">
+    <h2 className="text-3xl font-bold mb-12 text-center">
+      <span className={`border-b-4 ${darkMode ? 'border-blue-400' : 'border-blue-500'} pb-2`}>
+        Projects
+      </span>
+    </h2>
+
+    <div className="overflow-x-auto">
+      <div className="flex gap-6 w-max px-2">
+        {[
+          {
+            name: "ShopNav (AI Product Scraper)",
+            description: "An intelligent web scraper that navigates e-commerce sites to find and compare products based on user specifications.",
+            link: "https://shopnav-price-pilot.vercel.app/",
+            github: "https://github.com/sarathchandrasimma/shopnav-price-pilot.git",
+            image: shopnav, // Replace with your image URL
+          },
+          {
+            name: "Borrower Info Exchange Dashboard",
+            description: "A dashboard for tracking and managing borrower information with data visualization and analytics.",
+            link: "https://bank-borrower-nexus-ai.vercel.app/",
+            github: "https://github.com/sarathchandrasimma/bank-borrower-nexus-ai.git",
+            image: BorrowerInfoExhange, // Replace with your image URL
+          },
+        ].map((project, idx) => (
+          <div
+            key={idx}
+            className={`w-80 min-w-[20rem] rounded-2xl shadow-lg ${darkMode ? 'bg-gray-800 text-white' : 'bg-white text-black'} p-4 flex flex-col justify-between`}
+          >
+            <a href={project.link} target="_blank" rel="noopener noreferrer">
+              <img
+                src={project.image}
+                alt={project.name}
+                className="rounded-lg mb-4 w-full h-40 object-cover cursor-pointer transition duration-300 hover:opacity-90"
+              />
+              <h3 className="text-xl font-semibold mb-2 hover:underline cursor-pointer">{project.name}</h3>
+            </a>
+            <p className="text-sm mb-4">{project.description}</p>
+            <div className="flex flex-wrap items-center gap-3 mt-auto">
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-1 text-sm hover:underline"
+              >
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    fillRule="evenodd"
+                    d="M12 0C5.37 0 0 5.373 0 12c0 5.303 3.438 9.8 8.205 11.385.6.11.82-.26.82-.577 0-.285-.01-1.04-.016-2.04-3.338.725-4.043-1.61-4.043-1.61-.546-1.385-1.333-1.754-1.333-1.754-1.09-.745.084-.73.084-.73 1.205.084 1.839 1.236 1.839 1.236 1.07 1.833 2.807 1.304 3.49.997.107-.775.418-1.304.76-1.604-2.664-.305-5.467-1.334-5.467-5.933 0-1.31.468-2.38 1.235-3.22-.124-.303-.536-1.527.117-3.184 0 0 1.007-.322 3.3 1.23A11.52 11.52 0 0112 6.844c1.02.005 2.047.137 3.006.404 2.292-1.552 3.297-1.23 3.297-1.23.653 1.657.242 2.881.118 3.184.77.84 1.233 1.91 1.233 3.22 0 4.61-2.805 5.625-5.476 5.922.43.372.813 1.104.813 2.222 0 1.605-.015 2.9-.015 3.292 0 .319.218.696.825.578C20.565 21.796 24 17.3 24 12c0-6.627-5.373-12-12-12z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                <span>GitHub (Private)</span>
+              </a>
+              <a
+                href="mailto:sarathchandrasimma.04@gmail.com"
+                className="flex items-center space-x-1 text-sm hover:underline"
+              >
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 13.065L1.994 6.384A2 2 0 014 4h16a2 2 0 012.006 2.384L12 13.065zm0 2.059L4 7.104V18h16V7.104l-8 8.02z" />
+                </svg>
+                <span>Email Me</span>
+              </a>
+              <a
+                href="https://wa.me/919100151006"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-1 text-sm hover:underline"
+              >
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.52 3.48A11.93 11.93 0 0012 0C5.37 0 0 5.373 0 12a11.936 11.936 0 001.69 6.08L0 24l6.18-1.62A11.943 11.943 0 0012 24c6.63 0 12-5.373 12-12a11.94 11.94 0 00-3.48-8.52zM12 22c-1.7 0-3.32-.39-4.75-1.08l-.34-.17-3.67.96.98-3.57-.22-.36C3.43 16.11 3 14.09 3 12 3 6.48 7.48 2 12 2s9 4.48 9 10-4.48 10-9 10zm5.4-7.6c-.29-.14-1.7-.84-1.96-.94s-.45-.14-.64.14c-.19.29-.74.94-.9 1.13-.17.2-.33.21-.61.07s-1.19-.44-2.27-1.4c-.84-.75-1.4-1.67-1.56-1.95s-.02-.43.12-.57c.13-.13.29-.34.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5s-.64-1.55-.88-2.12c-.23-.55-.47-.47-.64-.48h-.55c-.19 0-.5.07-.76.36s-1 1-.98 2.44.96 2.82 1.1 3.02c.14.2 1.9 2.9 4.6 4.06.64.28 1.14.45 1.53.57.64.2 1.22.17 1.68.1.51-.08 1.7-.7 1.94-1.38.24-.68.24-1.27.17-1.38-.08-.11-.27-.17-.56-.3z"/>
+                </svg>
+                <span>WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Content Section */}
       <section id="content" className={`py-20 ${darkMode ? 'bg-gray-900' : 'bg-white'}`}>
@@ -425,7 +579,7 @@ function App() {
         </div>
       </section>
 
-      {/* Fitness Section
+      Fitness Section
       <section id="fitness" className={`py-20 ${darkMode ? 'bg-gray-800' : 'bg-gray-50'}`}>
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold mb-12 text-center">
@@ -452,7 +606,7 @@ function App() {
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
 
       {/* Contact Section */}
       <section id="contact" className={`py-20 ${darkMode ? 'bg-gray-900' : 'bg-white'}`}>
