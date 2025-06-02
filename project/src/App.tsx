@@ -440,7 +440,8 @@ function App() {
         ].map((project, idx) => (
           <div
             key={idx}
-            className={`w-80 min-w-[20rem] rounded-2xl shadow-lg ${darkMode ? 'bg-gray-800 text-white' : 'bg-white text-black'} p-4 flex flex-col justify-between`}
+            className={`w-80 min-w-[20rem] rounded-2xl shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl ${darkMode ? 'bg-gray-800 text-white' : 'bg-white text-black'} p-4 flex flex-col justify-between`}
+
           >
             <a href={project.link} target="_blank" rel="noopener noreferrer">
               <img
