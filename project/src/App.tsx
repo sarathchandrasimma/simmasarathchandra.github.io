@@ -22,6 +22,8 @@ import infosys from "./infosys.jpeg"
 import nptel from "./nptel.jpeg"
 import shopnav from "./shopnav.png"
 import BorrowerInfoExhange from "./BorrowerInfoExhange.png"
+import linktree from "./linktree.png"
+import movieMowa from "./movieMowa.png"
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -437,6 +439,20 @@ function App() {
             github: "https://github.com/sarathchandrasimma/bank-borrower-nexus-ai.git",
             image: BorrowerInfoExhange, // Replace with your image URL
           },
+          {
+            name: "AI Mowa Linktree",
+            description: "A social media linktree platform with multiple themes, admin analytics, and CRUD operations for managing links and social media presence.",
+            link: "https://aimowalinktree.netlify.app/",
+            github: "https://github.com/sarathchandrasimma/Custom-Link-Tree-for-social-media.git",
+            image: linktree,
+          },
+          {
+            name: "iMovies - Movie Ticket Booking System",
+            description: "A comprehensive movie ticket booking system built with MERN stack featuring user authentication, seat selection, payment integration, and booking management.",
+            link: "https://github.com/sarathchandrasimma/MoiveMowa-Tickek-Booking-System.git",
+            github: "https://github.com/sarathchandrasimma/MoiveMowa-Tickek-Booking-System.git",
+            image: movieMowa,
+          },
         ].map((project, idx) => (
           <div
             key={idx}
@@ -476,17 +492,6 @@ function App() {
                   <path d="M12 13.065L1.994 6.384A2 2 0 014 4h16a2 2 0 012.006 2.384L12 13.065zm0 2.059L4 7.104V18h16V7.104l-8 8.02z" />
                 </svg>
                 <span>Email Me</span>
-              </a>
-              <a
-                href="https://wa.me/919100151006"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center space-x-1 text-sm hover:underline"
-              >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.52 3.48A11.93 11.93 0 0012 0C5.37 0 0 5.373 0 12a11.936 11.936 0 001.69 6.08L0 24l6.18-1.62A11.943 11.943 0 0012 24c6.63 0 12-5.373 12-12a11.94 11.94 0 00-3.48-8.52zM12 22c-1.7 0-3.32-.39-4.75-1.08l-.34-.17-3.67.96.98-3.57-.22-.36C3.43 16.11 3 14.09 3 12 3 6.48 7.48 2 12 2s9 4.48 9 10-4.48 10-9 10zm5.4-7.6c-.29-.14-1.7-.84-1.96-.94s-.45-.14-.64.14c-.19.29-.74.94-.9 1.13-.17.2-.33.21-.61.07s-1.19-.44-2.27-1.4c-.84-.75-1.4-1.67-1.56-1.95s-.02-.43.12-.57c.13-.13.29-.34.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5s-.64-1.55-.88-2.12c-.23-.55-.47-.47-.64-.48h-.55c-.19 0-.5.07-.76.36s-1 1-.98 2.44.96 2.82 1.1 3.02c.14.2 1.9 2.9 4.6 4.06.64.28 1.14.45 1.53.57.64.2 1.22.17 1.68.1.51-.08 1.7-.7 1.94-1.38.24-.68.24-1.27.17-1.38-.08-.11-.27-.17-.56-.3z"/>
-                </svg>
-                <span>WhatsApp</span>
               </a>
             </div>
           </div>
