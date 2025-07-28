@@ -20,6 +20,7 @@ import fitness from "./fitness.jpg"
 import cisco from './cisco.png'
 import infosys from "./infosys.jpeg"
 import nptel from "./nptel.jpeg"
+import mongodbCert from "./mongodb certification.jpg"
 import shopnav from "./shopnav.png"
 import BorrowerInfoExhange from "./BorrowerInfoExhange.png"
 import linktree from "./linktree.png"
@@ -269,9 +270,24 @@ function App() {
         Certifications
       </span>
     </h2>
-    <div className="grid md:grid-cols-3 gap-8">
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
 
-      {/* Certificate 1 */}
+      {/* Certificate 1 - MongoDB */}
+      <div
+        className={`p-6 rounded-lg transition-all duration-300 transform hover:scale-105 
+          ${darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-50 hover:bg-gray-100'} 
+          shadow-md hover:shadow-2xl`}
+      >
+        <img src={mongodbCert} alt="MongoDB Associate Developer Global Certification" className="w-full h-auto rounded mb-4 shadow-sm" />
+        <p className={`inline-block px-3 py-1 rounded-full text-sm mb-2 ${darkMode ? 'bg-green-900 text-green-200' : 'bg-green-100 text-green-800'}`}>
+          Global Certification
+        </p>
+        <p className={`${darkMode ? 'text-gray-300' : 'text-gray-700'} mt-4`}>
+          MongoDB Associate Developer Global Certification demonstrating proficiency in MongoDB database development and operations.
+        </p>
+      </div>
+
+      {/* Certificate 2 - NPTEL */}
       <div
         className={`p-6 rounded-lg transition-all duration-300 transform hover:scale-105 
           ${darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-50 hover:bg-gray-100'} 
@@ -286,7 +302,7 @@ function App() {
         </p>
       </div>
 
-      {/* Certificate 2 */}
+      {/* Certificate 3 - Infosys */}
       <div
         className={`p-6 rounded-lg transition-all duration-300 transform hover:scale-105 
           ${darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-50 hover:bg-gray-100'} 
@@ -298,7 +314,7 @@ function App() {
         </p>
       </div>
 
-      {/* Certificate 3 */}
+      {/* Certificate 4 - Cisco */}
       <div
         className={`p-6 rounded-lg transition-all duration-300 transform hover:scale-105 
           ${darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-50 hover:bg-gray-100'} 
