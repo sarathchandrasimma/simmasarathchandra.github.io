@@ -21,6 +21,7 @@ import cisco from './cisco.png'
 import infosys from "./infosys.jpeg"
 import nptel from "./nptel.jpeg"
 import mongodbCert from "./mongodb certification.jpg"
+import salesforceAgentforce from "./salesforce agentforce.jpeg"
 import shopnav from "./shopnav.png"
 import BorrowerInfoExhange from "./BorrowerInfoExhange.png"
 import linktree from "./linktree.png"
@@ -287,7 +288,22 @@ function App() {
         </p>
       </div>
 
-      {/* Certificate 2 - NPTEL */}
+      {/* Certificate 2 - Salesforce Agentforce */}
+      <div
+        className={`p-6 rounded-lg transition-all duration-300 transform hover:scale-105 
+          ${darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-50 hover:bg-gray-100'} 
+          shadow-md hover:shadow-2xl`}
+      >
+        <img src={salesforceAgentforce} alt="Salesforce Agentforce Certification" className="w-full h-auto rounded mb-4 shadow-sm" />
+        <p className={`inline-block px-3 py-1 rounded-full text-sm mb-2 ${darkMode ? 'bg-blue-900 text-blue-200' : 'bg-blue-100 text-blue-800'}`}>
+          Agentforce Specialist
+        </p>
+        <p className={`${darkMode ? 'text-gray-300' : 'text-gray-700'} mt-4`}>
+          Salesforce Agentforce certification demonstrating expertise in AI-powered automation and intelligent agent development.
+        </p>
+      </div>
+
+      {/* Certificate 3 - NPTEL */}
       <div
         className={`p-6 rounded-lg transition-all duration-300 transform hover:scale-105 
           ${darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-50 hover:bg-gray-100'} 
@@ -302,7 +318,7 @@ function App() {
         </p>
       </div>
 
-      {/* Certificate 3 - Infosys */}
+      {/* Certificate 4 - Infosys */}
       <div
         className={`p-6 rounded-lg transition-all duration-300 transform hover:scale-105 
           ${darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-50 hover:bg-gray-100'} 
@@ -314,7 +330,7 @@ function App() {
         </p>
       </div>
 
-      {/* Certificate 4 - Cisco */}
+      {/* Certificate 5 - Cisco */}
       <div
         className={`p-6 rounded-lg transition-all duration-300 transform hover:scale-105 
           ${darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-50 hover:bg-gray-100'} 
@@ -498,7 +514,7 @@ function App() {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span>GitHub (Private)</span>
+                <span>GitHub (repo)</span>
               </a>
               <a
                 href="mailto:sarathchandrasimma.04@gmail.com"
