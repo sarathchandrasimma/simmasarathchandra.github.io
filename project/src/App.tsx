@@ -32,6 +32,11 @@ function App() {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
+  const [selectedCertificate, setSelectedCertificate] = useState<{
+    image: string;
+    title: string;
+    fileName: string;
+  } | null>(null);
   
   const texts = [
     "Data Science Aspirant",
@@ -64,8 +69,93 @@ function App() {
   return () => clearTimeout(timeout);
 }, [displayText, isDeleting, texts, currentTextIndex]);
 
+  // Handle escape key to close modal
+  useEffect(() => {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && selectedCertificate) {
+        closeModal();
+      }
+    };
+
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [selectedCertificate]);
+
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
+  };
+
+  // Certificate data
+  const certificates = [
+    {
+      image: mongodbCert,
+      title: "MongoDB Associate Developer Global Certification",
+      fileName: "mongodb-certification.jpg",
+      badge: "Global Certification",
+      badgeStyle: darkMode ? 'bg-green-900 text-green-200' : 'bg-green-100 text-green-800',
+      description: "MongoDB Associate Developer Global Certification demonstrating proficiency in MongoDB database development and operations."
+    },
+    {
+      image: salesforceAgentforce,
+      title: "Salesforce Agentforce Certification",
+      fileName: "salesforce-agentforce.jpeg",
+      badge: "Agentforce Specialist",
+      badgeStyle: darkMode ? 'bg-blue-900 text-blue-200' : 'bg-blue-100 text-blue-800',
+      description: "Salesforce Agentforce certification demonstrating expertise in AI-powered automation and intelligent agent development."
+    },
+    {
+      image: nptel,
+      title: "NPTEL Data Engineering Certificate",
+      fileName: "nptel-data-engineering.jpeg",
+      badge: "Elite",
+      badgeStyle: darkMode ? 'bg-blue-900 text-blue-200' : 'bg-blue-100 text-blue-800',
+      description: "Comprehensive data engineering course covering data pipelines, ETL processes, and database management."
+    },
+    {
+      image: infosys,
+      title: "Infosys Springboard Internship Certificate",
+      fileName: "infosys-springboard.jpeg",
+      badge: null,
+      badgeStyle: "",
+      description: "Hands-on experience with real-world data science projects and enterprise-level applications."
+    },
+    {
+      image: cisco,
+      title: "Cisco Python Essential Certificate",
+      fileName: "cisco-python-essential.png",
+      badge: "Cisco Essential",
+      badgeStyle: darkMode ? 'bg-green-900 text-green-200' : 'bg-green-100 text-green-800',
+      description: "Comprehensive training in Cisco Python Essential - 1."
+    }
+  ];
+
+  const handleCertificateClick = (cert: typeof certificates[0]) => {
+    setSelectedCertificate({
+      image: cert.image,
+      title: cert.title,
+      fileName: cert.fileName
+    });
+  };
+
+  const handleOpenCertificate = () => {
+    if (selectedCertificate) {
+      window.open(selectedCertificate.image, '_blank');
+    }
+  };
+
+  const handleDownloadCertificate = () => {
+    if (selectedCertificate) {
+      const link = document.createElement('a');
+      link.href = selectedCertificate.image;
+      link.download = selectedCertificate.fileName;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  };
+
+  const closeModal = () => {
+    setSelectedCertificate(null);
   };
 
   return (
@@ -272,79 +362,44 @@ function App() {
       </span>
     </h2>
     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-      {/* Certificate 1 - MongoDB */}
-      <div
-        className={`p-6 rounded-lg transition-all duration-300 transform hover:scale-105 
-          ${darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-50 hover:bg-gray-100'} 
-          shadow-md hover:shadow-2xl`}
-      >
-        <img src={mongodbCert} alt="MongoDB Associate Developer Global Certification" className="w-full h-auto rounded mb-4 shadow-sm" />
-        <p className={`inline-block px-3 py-1 rounded-full text-sm mb-2 ${darkMode ? 'bg-green-900 text-green-200' : 'bg-green-100 text-green-800'}`}>
-          Global Certification
-        </p>
-        <p className={`${darkMode ? 'text-gray-300' : 'text-gray-700'} mt-4`}>
-          MongoDB Associate Developer Global Certification demonstrating proficiency in MongoDB database development and operations.
-        </p>
-      </div>
-
-      {/* Certificate 2 - Salesforce Agentforce */}
-      <div
-        className={`p-6 rounded-lg transition-all duration-300 transform hover:scale-105 
-          ${darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-50 hover:bg-gray-100'} 
-          shadow-md hover:shadow-2xl`}
-      >
-        <img src={salesforceAgentforce} alt="Salesforce Agentforce Certification" className="w-full h-auto rounded mb-4 shadow-sm" />
-        <p className={`inline-block px-3 py-1 rounded-full text-sm mb-2 ${darkMode ? 'bg-blue-900 text-blue-200' : 'bg-blue-100 text-blue-800'}`}>
-          Agentforce Specialist
-        </p>
-        <p className={`${darkMode ? 'text-gray-300' : 'text-gray-700'} mt-4`}>
-          Salesforce Agentforce certification demonstrating expertise in AI-powered automation and intelligent agent development.
-        </p>
-      </div>
-
-      {/* Certificate 3 - NPTEL */}
-      <div
-        className={`p-6 rounded-lg transition-all duration-300 transform hover:scale-105 
-          ${darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-50 hover:bg-gray-100'} 
-          shadow-md hover:shadow-2xl`}
-      >
-        <img src={nptel} alt="NPTEL Data Engineering Certificate" className="w-full h-auto rounded mb-4 shadow-sm" />
-        <p className={`inline-block px-3 py-1 rounded-full text-sm mb-2 ${darkMode ? 'bg-blue-900 text-blue-200' : 'bg-blue-100 text-blue-800'}`}>
-          Elite
-        </p>
-        <p className={`${darkMode ? 'text-gray-300' : 'text-gray-700'} mt-4`}>
-          Comprehensive data engineering course covering data pipelines, ETL processes, and database management.
-        </p>
-      </div>
-
-      {/* Certificate 4 - Infosys */}
-      <div
-        className={`p-6 rounded-lg transition-all duration-300 transform hover:scale-105 
-          ${darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-50 hover:bg-gray-100'} 
-          shadow-md hover:shadow-2xl`}
-      >
-        <img src={infosys} alt="Infosys Springboard Internship Certificate" className="w-full h-auto rounded mb-4 shadow-sm" />
-        <p className={`${darkMode ? 'text-gray-300' : 'text-gray-700'} mt-4`}>
-          Hands-on experience with real-world data science projects and enterprise-level applications.
-        </p>
-      </div>
-
-      {/* Certificate 5 - Cisco */}
-      <div
-        className={`p-6 rounded-lg transition-all duration-300 transform hover:scale-105 
-          ${darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-50 hover:bg-gray-100'} 
-          shadow-md hover:shadow-2xl`}
-      >
-        <img src={cisco} alt="Cisco Python Essential Certificate" className="w-full h-auto rounded mb-4 shadow-sm" />
-        <p className={`inline-block px-3 py-1 rounded-full text-sm mb-2 ${darkMode ? 'bg-green-900 text-green-200' : 'bg-green-100 text-green-800'}`}>
-          Cisco Essential
-        </p>
-        <p className={`${darkMode ? 'text-gray-300' : 'text-gray-700'} mt-4`}>
-          Comprehensive training in Cisco Python Essential - 1.
-        </p>
-      </div>
-
+      {certificates.map((cert, index) => (
+        <div
+          key={index}
+          className={`p-6 rounded-lg transition-all duration-300 transform hover:scale-105 cursor-pointer
+            ${darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-50 hover:bg-gray-100'} 
+            shadow-md hover:shadow-2xl group`}
+          onClick={() => handleCertificateClick(cert)}
+        >
+          <div className="relative">
+            <img 
+              src={cert.image} 
+              alt={cert.title} 
+              className="w-full h-auto rounded mb-4 shadow-sm hover:shadow-md transition-shadow" 
+            />
+            {/* Click indicator overlay */}
+            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 rounded mb-4 flex items-center justify-center">
+              <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <svg className="w-8 h-8 text-white drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          {cert.badge && (
+            <p className={`inline-block px-3 py-1 rounded-full text-sm mb-2 ${cert.badgeStyle}`}>
+              {cert.badge}
+            </p>
+          )}
+          <p className={`${darkMode ? 'text-gray-300' : 'text-gray-700'} mt-4`}>
+            {cert.description}
+          </p>
+          {/* Click hint */}
+          <p className={`text-xs mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>
+            Click to view options
+          </p>
+        </div>
+      ))}
     </div>
   </div>
 </section>
@@ -714,6 +769,75 @@ function App() {
           <p>&copy; {new Date().getFullYear()} Simma Sarath Chandra. All rights reserved.</p>
         </div>
       </footer>
+
+      {/* Certificate Modal */}
+      {selectedCertificate && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+          onClick={closeModal}
+        >
+          <div 
+            className={`relative max-w-2xl w-full max-h-[90vh] ${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-lg shadow-2xl overflow-hidden`}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button
+              onClick={closeModal}
+              className={`absolute top-4 right-4 z-10 p-2 rounded-full ${darkMode ? 'bg-gray-700 hover:bg-gray-600 text-white' : 'bg-gray-100 hover:bg-gray-200 text-gray-800'} transition-colors`}
+              aria-label="Close modal"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            {/* Certificate Image */}
+            <div className="p-6">
+              <img
+                src={selectedCertificate.image}
+                alt={selectedCertificate.title}
+                className="w-full h-auto rounded-lg shadow-lg mb-6"
+              />
+              
+              {/* Certificate Title */}
+              <h3 className={`text-xl font-bold mb-6 text-center ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                {selectedCertificate.title}
+              </h3>
+
+              {/* Action Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button
+                  onClick={handleOpenCertificate}
+                  className={`flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all transform hover:scale-105 ${
+                    darkMode 
+                      ? 'bg-blue-600 hover:bg-blue-700 text-white' 
+                      : 'bg-blue-500 hover:bg-blue-600 text-white'
+                  } shadow-lg hover:shadow-xl`}
+                >
+                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                  Open in New Tab
+                </button>
+                
+                <button
+                  onClick={handleDownloadCertificate}
+                  className={`flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all transform hover:scale-105 ${
+                    darkMode 
+                      ? 'bg-green-600 hover:bg-green-700 text-white' 
+                      : 'bg-green-500 hover:bg-green-600 text-white'
+                  } shadow-lg hover:shadow-xl`}
+                >
+                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                  Download Certificate
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
