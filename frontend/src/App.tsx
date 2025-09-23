@@ -15,7 +15,7 @@ import {
   Dumbbell,
 } from 'lucide-react';
 import profileImage from "./profile.jpg"
-import Resume from "./sarathchandra_resume.pdf"
+import Resume from "./SarathChandra_resume.pdf"
 import fitness from "./fitness.jpg"
 import cisco from './cisco.png'
 import infosys from "./infosys.jpeg"
