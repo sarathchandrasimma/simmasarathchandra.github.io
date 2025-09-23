@@ -24,6 +24,7 @@ import mongodbCert from "./mongodb certification.jpg"
 import salesforceAgentforce from "./salesforce agentforce.jpeg"
 import shopnav from "./shopnav.png"
 import BorrowerInfoExhange from "./BorrowerInfoExhange.png"
+import oracleCert from "./oracleDataScienceCertificate.png"; 
 import linktree from "./linktree.png"
 import movieMowa from "./movieMowa.png"
 import reversee from "./reversee.png"
@@ -103,6 +104,14 @@ function App() {
       badge: "Agentforce Specialist",
       badgeStyle: darkMode ? 'bg-blue-900 text-blue-200' : 'bg-blue-100 text-blue-800',
       description: "Salesforce Agentforce certification demonstrating expertise in AI-powered automation and intelligent agent development."
+    },
+    {
+      image: oracleCert,
+      title: "Oracle Cloud Infrastructure 2025 Certified Data Science Professional",
+      fileName: "oracleDataScienceCertificate.png",
+      badge: "Oracle Certified Professional",
+      badgeStyle: darkMode ? 'bg-red-900 text-red-200' : 'bg-red-100 text-red-800',
+      description: "Global certification by Oracle University for proficiency in Data Science on Oracle Cloud Infrastructure."
     },
     {
       image: nptel,
