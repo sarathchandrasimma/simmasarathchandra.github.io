@@ -20,6 +20,7 @@ import fitness from "./fitness.jpg"
 import cisco from './cisco.png'
 import infosys from "./infosys.jpeg"
 import nptel from "./nptel.jpeg"
+import nptel2 from "./nptel2.png"
 import mongodbCert from "./mongodb certification.jpg"
 import salesforceAgentforce from "./salesforce agentforce.jpeg"
 import shopnav from "./shopnav.png"
@@ -120,6 +121,15 @@ function App() {
       badge: "Elite",
       badgeStyle: darkMode ? 'bg-blue-900 text-blue-200' : 'bg-blue-100 text-blue-800',
       description: "Comprehensive data engineering course covering data pipelines, ETL processes, and database management."
+    },
+
+    {
+      image: nptel2,
+      title: "NPTEL Introduction to Machine Learning",
+      fileName: "nptel-intro-ml.png",
+      badge: "Elite",
+      badgeStyle: darkMode ? 'bg-blue-900 text-blue-200' : 'bg-blue-100 text-blue-800',
+      description: "Introduction to Machine Learning course from NPTEL covering supervised and unsupervised learning basics."
     },
     {
       image: infosys,
