@@ -624,16 +624,16 @@ function App() {
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <a 
-              href="https://www.youtube.com/@PuppyWins" 
+              href="https://yt.oia.bio/Ai-mowa" 
               target="_blank" 
               rel="noopener noreferrer"
               className={`block p-6 rounded-lg ${darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-50 hover:bg-gray-100'} shadow-md transition-all`}
             >
               <div className="flex items-center mb-4">
                 <Youtube size={24} className="mr-3 text-red-500" />
-                <h3 className="text-xl font-bold">PoorPuppy</h3>
+                <h3 className="text-xl font-bold">Ai Mowa</h3>
               </div>
-              <p>Entertaining content featuring adorable puppies and their adventures.</p>
+              <p>Educational and technical content about AI technologies and tools.</p>
             </a>
             <a 
               href="https://www.youtube.com/@GodsPlan-Ai" 
@@ -667,7 +667,7 @@ function App() {
             >
               <div className="flex items-center mb-4">
                 <Youtube size={24} className="mr-3 text-red-500" />
-                <h3 className="text-xl font-bold">Ai.mowa</h3>
+                <h3 className="text-xl font-bold">Sarath</h3>
               </div>
               <p>Educational content about AI technologies, tools, and applications.</p>
             </a>
