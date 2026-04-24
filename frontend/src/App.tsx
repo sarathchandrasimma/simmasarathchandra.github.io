@@ -236,6 +236,14 @@ function App() {
               <Linkedin size={24} />
             </a>
             <a 
+              href="https://instagram.com/ai.mowa" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className={`p-3 rounded-full ${darkMode ? 'bg-gray-700 hover:bg-gray-600' : 'bg-white hover:bg-gray-100'} shadow-md transition-all`}
+            >
+              <Instagram size={24} />
+            </a>
+            <a 
               href="mailto:sarathchandra.simma04@gmail.com" 
               className={`p-3 rounded-full ${darkMode ? 'bg-gray-700 hover:bg-gray-600' : 'bg-white hover:bg-gray-100'} shadow-md transition-all`}
             >
@@ -771,6 +779,20 @@ function App() {
                       className={`${darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-800'}`}
                     >
                       simma-sarathchandra
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-center">
+                  <Instagram size={24} className="mr-4" />
+                  <div>
+                    <h3 className="text-lg font-semibold">Instagram</h3>
+                    <a 
+                      href="https://instagram.com/ai.mowa" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className={`${darkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-800'}`}
+                    >
+                      ai.mowa
                     </a>
                   </div>
                 </div>
