@@ -1,3 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+	:root {
+		color-scheme: dark;
+		--bg: #07111d;
+		--bg-soft: #102235;
+		--text: #f8fbff;
+		--muted: #b4c4d7;
+		--accent: #67e8f9;
+		--accent-2: #f9a8d4;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		margin: 0;
+		min-width: 320px;
+		min-height: 100vh;
+		background:
+			radial-gradient(circle at top, rgba(251, 191, 36, 0.18), transparent 26%),
+			radial-gradient(circle at 12% 18%, rgba(34, 211, 238, 0.18), transparent 20%),
+			radial-gradient(circle at 88% 14%, rgba(244, 114, 182, 0.16), transparent 22%),
+			linear-gradient(180deg, var(--bg) 0%, #0f1d2d 48%, #1a2d40 100%);
+		color: var(--text);
+		font-family: 'Space Grotesk', sans-serif;
+		text-rendering: optimizeLegibility;
+		-webkit-font-smoothing: antialiased;
+	}
+
+	button,
+	input,
+	textarea {
+		font: inherit;
+	}
+
+	::selection {
+		background: rgba(103, 232, 249, 0.3);
+		color: white;
+	}
+}
+
+@layer utilities {
+	.bg-universe {
+		background:
+			radial-gradient(circle at top, rgba(251, 191, 36, 0.2), transparent 24%),
+			radial-gradient(circle at 18% 20%, rgba(34, 211, 238, 0.2), transparent 20%),
+			radial-gradient(circle at 82% 18%, rgba(244, 114, 182, 0.16), transparent 24%),
+			linear-gradient(180deg, #dff4ff 0%, #bfe1fb 38%, #88aecd 100%);
+	}
+
+	.noise-layer {
+		pointer-events: none;
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+		opacity: 0.28;
+		mix-blend-mode: soft-light;
+		background:
+			radial-gradient(circle at 15% 25%, rgba(255, 255, 255, 0.12), transparent 16%),
+			radial-gradient(circle at 80% 18%, rgba(255, 255, 255, 0.08), transparent 18%),
+			radial-gradient(circle at 52% 68%, rgba(255, 255, 255, 0.06), transparent 18%);
+	}
+
+	.scrollbar-hidden::-webkit-scrollbar {
+		width: 0;
+		height: 0;
+	}
+
+	.scrollbar-hidden {
+		scrollbar-width: none;
+	}
+}
