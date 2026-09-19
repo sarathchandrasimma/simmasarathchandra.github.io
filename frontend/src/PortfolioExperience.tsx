@@ -3673,9 +3673,6 @@ function Loader({ theme, onDone }: { theme: Theme; onDone: () => void }) {
         <span style={{ fontSize: 12, color: theme.textMuted, letterSpacing: '0.3em' }}>%</span>
       </div>
 
-      <p style={{ position: 'absolute', bottom: 40, left: 40, fontSize: 10, letterSpacing: '0.35em', color: theme.textMuted, textTransform: 'uppercase' }}>
-        {theme.name} · loading universe
-      </p>
     </div>
   );
 }
@@ -3759,12 +3756,14 @@ function VideoStage({
   videoSrc,
   contentSide,
   allowAudio = false,
+  preload = 'metadata',
   children,
 }: {
   id: string;
   videoSrc: { desktop: string; mobile: string };
   contentSide: 'left' | 'right';
   allowAudio?: boolean;
+  preload?: 'none' | 'metadata' | 'auto';
   children: ReactNode;
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -3815,7 +3814,7 @@ function VideoStage({
             muted
             playsInline
             loop
-            preload="metadata"
+            preload={preload}
             style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: isLeft ? '75% center' : '25% center' }}
           >
             <source src={videoSrc.mobile} media="(max-width: 700px)" />
@@ -4199,10 +4198,10 @@ function SocialSection() {
 
 function FitnessSection() {
   return (
-    <VideoStage id="fitness" videoSrc={FITNESS_VIDEO} contentSide="right">
+    <VideoStage id="fitness" videoSrc={FITNESS_VIDEO} contentSide="right" preload="auto">
       <div className="fitness-copy" style={{ textAlign: 'right' }}>
         <h2 className="rv font-display fitness-title" style={{ fontSize: 'clamp(2rem,6vw,4rem)', fontWeight: 900, letterSpacing: '0', lineHeight: 1.08, marginBottom: 16, overflowWrap: 'break-word' }}>
-          <span className="grad-text">PIXELS &amp; PLATES.</span>
+          <span className="shimmer-text">PIXELS &amp; PLATES.</span>
         </h2>
         <p className="rv" style={{ fontSize: 15, color: 'var(--text-muted)', lineHeight: 1.75, maxWidth: 340, marginLeft: 'auto' }}>
           One builds the craft.<br />
