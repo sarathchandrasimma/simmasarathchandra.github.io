@@ -3303,10 +3303,10 @@ import mongodbCert from './mongodb certification.jpg';
 import salesforceAgentforce from './salesforce agentforce.jpeg';
 import linktree from './linktree.png';
 import oracleCert from './oracleDataScienceCertificate.png';
-import horizontalIntroVideo from './horizontal intro.mp4';
+import horizontalIntroVideo from './horizontal-intro-optimized.mp4';
 import verticalIntroVideo from './vertical intro.mp4';
-import horizontalFitnessVideo from './horizontal fitness.mp4';
-import verticalFitnessVideo from './vertical fitness .mp4';
+import horizontalFitnessVideo from './horizontal-fitness-optimized.mp4';
+import verticalFitnessVideo from './vertical-fitness-optimized.mp4';
 
 type Brand = 'instagram' | 'youtube' | 'linkedin' | 'github';
 
@@ -4198,7 +4198,7 @@ function SocialSection() {
 
 function FitnessSection() {
   return (
-    <VideoStage id="fitness" videoSrc={FITNESS_VIDEO} contentSide="right" preload="auto">
+    <VideoStage id="fitness" videoSrc={FITNESS_VIDEO} contentSide="right">
       <div className="fitness-copy" style={{ textAlign: 'right' }}>
         <h2 className="rv font-display fitness-title" style={{ fontSize: 'clamp(2rem,6vw,4rem)', fontWeight: 900, letterSpacing: '0', lineHeight: 1.08, marginBottom: 16, overflowWrap: 'break-word' }}>
           <span className="shimmer-text">PIXELS &amp; PLATES.</span>
